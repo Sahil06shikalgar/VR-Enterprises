@@ -4963,18 +4963,34 @@ a.enq-contact-value:hover {
 
   /* Hero Live Studio Status */
   .hero-live-status {
-    border-radius: var(--radius-md);
-    padding: 7px 12px;
-    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-radius: var(--radius-pill);
+    padding: 6px 14px;
+    margin-bottom: 16px;
     width: fit-content;
     max-width: 100%;
     gap: 8px;
-    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(43, 56, 49, 0.05);
+    box-sizing: border-box;
+  }
+
+  .live-status-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .live-status-text {
     font-size: 0.76rem;
-    line-height: 1.4;
+    line-height: 1.35;
+    color: var(--text);
   }
 
   .hero-eyebrow {
@@ -5358,6 +5374,22 @@ a.enq-contact-value:hover {
 
   .mobile-nav-title {
     font-size: 1.25rem;
+  }
+
+  /* Compact live status pill on small phones (iPhone SE, etc.) */
+  .hero-live-status {
+    padding: 5px 12px;
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+
+  .live-status-extra {
+    display: none;
+  }
+
+  .live-status-text {
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
 
   /* Hero headline */

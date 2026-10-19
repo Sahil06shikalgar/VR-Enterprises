@@ -175,7 +175,7 @@ function Home() {
             <div className="hero-live-status">
               <span className="live-status-pulse" aria-hidden="true" />
               <span className="live-status-text">
-                Studio Status: <strong>Open &amp; Fabricating</strong> &middot; Navi Mumbai &middot; Express 24h Delivery
+                Studio Status: <strong>Open &amp; Fabricating</strong> &middot; Navi Mumbai<span className="live-status-extra"> &middot; Express 24h Delivery</span>
               </span>
             </div>
 

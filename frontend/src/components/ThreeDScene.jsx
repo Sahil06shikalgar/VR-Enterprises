@@ -272,14 +272,14 @@ function ThreeDScene() {
 
       const projCubeVerts = rotatedCubeVerts.map((v) => project(v, cubePosX, cubePosY, 0))
 
-      // Sort faces by Z depth for Painter's algorithm
+      // Sort faces by Z depth for Painter's algorithm (furthest first)
       const sortedCubeFaces = cubeFaces
         .map((face) => {
           const avgZ =
             face.reduce((sum, idx) => sum + rotatedCubeVerts[idx].z, 0) / face.length
           return { face, avgZ }
         })
-        .sort((a, b) => a.avgZ - b.avgZ)
+        .sort((a, b) => b.avgZ - a.avgZ)
 
       for (let i = 0; i < sortedCubeFaces.length; i++) {
         const { face } = sortedCubeFaces[i]
@@ -314,8 +314,17 @@ function ThreeDScene() {
 
       const projOctaVerts = rotatedOctaVerts.map((v) => project(v, octaPosX, octaPosY, 0))
 
-      for (let i = 0; i < octaFaces.length; i++) {
-        const face = octaFaces[i]
+      // Sort octahedron faces by Z depth for Painter's algorithm (furthest first)
+      const sortedOctaFaces = octaFaces
+        .map((face) => {
+          const avgZ =
+            face.reduce((sum, idx) => sum + rotatedOctaVerts[idx].z, 0) / face.length
+          return { face, avgZ }
+        })
+        .sort((a, b) => b.avgZ - a.avgZ)
+
+      for (let i = 0; i < sortedOctaFaces.length; i++) {
+        const { face } = sortedOctaFaces[i]
         const pts = face.map((idx) => projOctaVerts[idx]).filter(Boolean)
         if (pts.length !== 3) continue
 

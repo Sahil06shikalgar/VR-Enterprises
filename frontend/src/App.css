@@ -4451,75 +4451,246 @@ a.enq-contact-value:hover {
 /* --- Tablet / Medium Screens (<= 1024px) --- */
 @media (max-width: 1024px) {
   :root {
-    --section-y: clamp(56px, 7vw, 100px);
+    --section-y: clamp(54px, 6.5vw, 88px);
   }
 
   .container {
-    padding-inline: clamp(18px, 4vw, 36px);
+    padding-inline: clamp(22px, 3.8vw, 38px);
+  }
+
+  /* Header Island on Tablet */
+  .header-call-pill {
+    display: none !important;
+  }
+
+  .nav-rail {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 6px 11px;
+    font-size: 0.85rem;
   }
 
   .mega-dropdown {
-    width: min(620px, calc(100vw - 36px));
+    width: min(640px, calc(100vw - 44px));
   }
 
-  /* Two-column major sections stack gracefully */
+  /* Two-column major sections stack gracefully on Tablet */
   .hero-grid,
   .atelier-grid,
   .story-grid,
   .contact-layout,
   .why-bento__head,
   .estimator-main-grid,
-  .material-stage-grid {
+  .material-stage-grid,
+  .consultation-studio-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 38px;
   }
 
-  /* Why Bento 2-column reorganization */
-  .why-bento__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  /* Hero Section on Tablet */
+  .hero-band {
+    padding-top: clamp(26px, 3.5vw, 44px);
+    padding-bottom: clamp(42px, 5vw, 70px);
   }
 
-  .why-feature {
-    grid-column: span 2;
-    grid-row: auto;
-    min-height: 340px;
+  .hero-title {
+    font-size: clamp(2.35rem, 1.95rem + 1.6vw, 3.2rem);
+    line-height: 1.12;
+    margin-bottom: 16px;
   }
 
-  /* Material selector rail: 2x2 grid */
-  .material-nav-rail {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  .hero-lead {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    max-width: 60ch;
+    margin-bottom: 22px;
   }
 
-  /* Estimator summary card becomes inline flow */
-  .estimator-summary-card {
-    position: static;
-    margin-top: 10px;
+  .hero-dynamic-pill-nav {
+    margin-block: 18px 12px;
+  }
+
+  .hero-pill-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-pill-btn {
+    padding: 7px 15px;
+    font-size: 0.82rem;
+  }
+
+  .hero-feature-callout {
+    padding: 14px 18px;
+    margin-bottom: 22px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
     width: 100%;
   }
 
-  /* Footer 2 columns on tablet */
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
-  }
-
   .hero-arch-frame {
-    max-width: 440px;
+    max-width: 480px;
     aspect-ratio: 16 / 11;
     margin-inline: auto;
+    border-radius: clamp(32px, 5vw, 46px);
   }
 
   .hero-badge-float {
     left: 16px;
+    right: 16px;
     bottom: 16px;
     max-width: calc(100% - 32px);
+    margin-inline: auto;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  /* Lightbox modal responsive */
+  /* Stats Strip on Tablet */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .stat-item {
+    padding: 14px 10px;
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 1.7rem + 1vw, 2.7rem);
+  }
+
+  .stat-label {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Our Approach Section on Tablet: 2x2 Grid */
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .approach-card {
+    padding: 26px 22px;
+    min-height: 220px;
+  }
+
+  /* Our Services Grid on Tablet: 2 Columns */
+  .services-cards-grid,
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .service-card,
+  .svc-card {
+    padding: 26px 22px;
+  }
+
+  .service-item-chip {
+    font-size: 0.76rem;
+    padding: 4px 10px;
+  }
+
+  /* The Atelier Section on Tablet */
+  .atelier-photo {
+    max-width: 580px;
+    margin-inline: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .atelier-specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* Atelier Material & Finish Laboratory on Tablet */
+  .material-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .swatch-coins-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .swatch-coin-btn {
+    padding: 8px 14px;
+    font-size: 0.84rem;
+  }
+
+  .atelier-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .material-guarantee-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .material-stage-panel {
+    padding: clamp(20px, 3.5vw, 32px);
+  }
+
+  .material-img-container {
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
+    width: 100%;
+  }
+
+  .material-cta-desk {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn--atelier-cta,
+  .btn--atelier-whatsapp {
+    flex: 1;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+  }
+
+  /* Selected Works Portfolio Grid on Tablet: 2 Columns */
+  .portfolio-grid,
+  .folio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .portfolio-cat-filter {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
   .portfolio-lightbox-card {
-    max-width: min(860px, calc(100vw - 32px));
+    max-width: min(740px, calc(100vw - 36px));
   }
 
   .portfolio-lightbox-grid {
@@ -4528,13 +4699,145 @@ a.enq-contact-value:hover {
 
   .portfolio-lightbox-image-wrap {
     min-height: 240px;
-    max-height: 360px;
+    max-height: 340px;
+  }
+
+  .portfolio-lightbox-content {
+    padding: 24px 26px;
+  }
+
+  /* Meet the Team on Tablet: 2x2 Grid */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .team-card {
+    padding: 26px 20px;
+  }
+
+  /* Client Reviews on Tablet */
+  .reviews-google {
+    display: flex;
+    margin-inline: auto;
+    width: fit-content;
+    margin-bottom: 32px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .review-card {
+    padding: 26px 22px;
+  }
+
+  /* FAQ Accordion on Tablet */
+  .faq-accordion {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .faq-question-btn {
+    padding: 18px 22px;
+    font-size: 0.98rem;
+  }
+
+  /* Consultation Studio Band on Tablet */
+  .consultation-studio-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .consultation-title {
+    font-size: clamp(2.2rem, 1.8rem + 1.2vw, 2.9rem);
+  }
+
+  .consultation-pillars {
+    gap: 12px;
+  }
+
+  .consultation-pillar {
+    padding: 14px 18px;
+  }
+
+  .consultation-direct-card {
+    padding: 20px 22px;
+  }
+
+  .consultation-form-card {
+    padding: clamp(26px, 3.8vw, 42px);
+  }
+
+  .enq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Sub-pages Grids on Tablet */
+  .why-bento__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .why-feature {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 300px;
+  }
+
+  .letters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .videos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  /* Estimator on Tablet */
+  .estimator-summary-card {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* CTA Band on Tablet */
+  .cta-inner,
+  .cta-panel {
+    padding: clamp(34px, 4.5vw, 52px) clamp(22px, 3.8vw, 38px);
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* Footer on Tablet: 2x2 Grid */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }
 
-/* --- Small Tablet & Large Mobile (<= 860px) --- */
-@media (max-width: 860px) {
-  /* Header navigation switch to Island + Burger */
+/* --- Tablet Header Breakpoint & Compact Mode (<= 991px) --- */
+@media (max-width: 991px) {
   .header-nav,
   .header-call-pill {
     display: none !important;
@@ -4545,21 +4848,21 @@ a.enq-contact-value:hover {
   }
 
   .site-header__outer {
-    padding: 10px 16px;
+    padding: 10px 18px;
   }
 
   .site-header__island {
-    padding: 6px 12px 6px 16px;
+    padding: 6px 14px 6px 16px;
+  }
+}
+
+/* --- Mid/Small Tablet (<= 840px) --- */
+@media (max-width: 840px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
-  /* Forms single column */
-  .form-grid,
-  .enq-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Why Bento single column */
   .why-bento__grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -4567,19 +4870,13 @@ a.enq-contact-value:hover {
 
   .why-feature {
     grid-column: span 1;
-    min-height: 290px;
+    min-height: 280px;
   }
 
-  .why-feature__card {
-    padding: clamp(26px, 4vw, 36px);
-  }
-
-  /* CTA Band stacks vertically */
   .cta-inner {
     flex-direction: column;
     text-align: center;
-    gap: 26px;
-    padding: clamp(32px, 5vw, 48px) clamp(20px, 4vw, 36px);
+    gap: 24px;
   }
 
   .cta-copy p {
@@ -4625,18 +4922,6 @@ a.enq-contact-value:hover {
     gap: 8px;
     padding: 10px 16px;
     font-size: 0.84rem;
-  }
-
-  /* Services Grid single/double column */
-  .services-cards-grid,
-  .svc-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .service-card,
-  .svc-card {
-    padding: 24px 20px;
   }
 }
 

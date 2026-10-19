@@ -1,0 +1,225 @@
+:root {
+  /* =========================================================
+     Squarespace "Clove" Template Design Tokens
+     Warm, organic, editorial aesthetic (Cream, Olive, Linen, Terracotta)
+     ========================================================= */
+
+  /* Neutral & Canvas Tones with Fluid Translucency */
+  --clove-bg-solid: #FAF8F5;
+  --clove-bg: rgba(250, 248, 245, 0.8);
+  --clove-cream: rgba(250, 248, 245, 0.8);
+  --clove-surface: #FFFFFF;
+  --clove-linen: rgba(242, 238, 232, 0.85);
+  --clove-linen-deep: rgba(232, 226, 216, 0.9);
+  --clove-sand: #DFD7CA;
+  --clove-card-hover: #FFFFFF;
+
+  /* Olive & Forest Dark Tones (Clove Signature) */
+  --clove-olive: #2B3831;
+  --clove-olive-deep: #1E2722;
+  --clove-olive-soft: #3B4B42;
+  --clove-olive-muted: #526359;
+  --clove-sage: #6B7F73;
+  --clove-sage-light: #EBF0EC;
+
+  /* Accent & Warmth */
+  --clove-terracotta: #C87A5E;
+  --clove-terracotta-soft: rgba(200, 122, 94, 0.12);
+  --clove-gold: #B88746;
+  --clove-gold-soft: rgba(184, 135, 70, 0.12);
+
+  /* Typography Colors */
+  --text: #26312B;
+  --text-h: #18221D;
+  --text-soft: #5C6961;
+  --text-muted: #7D8B83;
+  --text-inv: #FAF8F5;
+  --text-inv-soft: #D7E1DA;
+  --text-inv-faint: #98ABA0;
+
+  /* Semantic Aliases for compatibility */
+  --bg: var(--clove-bg);
+  --bg-alt: var(--clove-linen);
+  --bg-soft: var(--clove-linen-deep);
+  --surface: var(--clove-surface);
+  --border: rgba(43, 56, 49, 0.12);
+  --border-subtle: rgba(43, 56, 49, 0.07);
+  --border-strong: rgba(43, 56, 49, 0.22);
+  --border-dark: rgba(250, 248, 245, 0.14);
+
+  --accent: var(--clove-olive);
+  --accent-2: var(--clove-terracotta);
+  --accent-bg: var(--clove-sage-light);
+  --accent-border: rgba(43, 56, 49, 0.2);
+
+  --primary: var(--clove-olive);
+  --primary-hover: var(--clove-olive-soft);
+  --primary-light: var(--clove-sage-light);
+
+  /* Layout Spacing */
+  --container: 1280px;
+  --container-narrow: 980px;
+  --gutter: clamp(20px, 4.5vw, 48px);
+  --section-y: clamp(72px, 8vw, 130px);
+  --section-y-sm: clamp(48px, 5vw, 80px);
+
+  /* Curves & Shapes */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-card: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+  --radius-arch: 240px 240px 24px 24px;
+
+  /* Ambient Soft Shadows (Organic, not digital) */
+  --shadow-sm: 0 2px 6px rgba(35, 46, 39, 0.04);
+  --shadow-md: 0 12px 32px -10px rgba(35, 46, 39, 0.08);
+  --shadow-lg: 0 24px 64px -16px rgba(35, 46, 39, 0.12);
+  --shadow-card: 0 10px 30px -8px rgba(35, 46, 39, 0.06), 0 1px 3px rgba(35, 46, 39, 0.03);
+  --shadow-card-hover: 0 20px 40px -12px rgba(35, 46, 39, 0.12), 0 1px 3px rgba(35, 46, 39, 0.05);
+
+  /* Typography Stack */
+  --font-serif: 'Cormorant Garamond', 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
+  --font-mono: ui-monospace, Menlo, Consolas, monospace;
+
+  /* Global Setup */
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--clove-bg-solid, #FAF8F5);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background-color: transparent;
+  color: var(--text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clove Editorial Typography */
+h1,
+h2,
+h3,
+h4,
+.serif-heading {
+  color: var(--text-h);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 2rem + 2.5vw, 4.2rem);
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 1.5rem + 1.8vw, 3rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 1.15rem + 0.7vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+/* Elegant serif italics */
+h1 em,
+h2 em,
+h3 em,
+.hero-title em,
+.serif-italic {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: inherit;
+}
+
+p {
+  margin: 0 0 16px;
+  line-height: 1.68;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Subtle focus indicators */
+:focus-visible {
+  outline: 2px solid var(--clove-olive);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  background: var(--clove-sage-light);
+  color: var(--clove-olive-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
